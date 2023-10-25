@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: henokkh
+  password: 123456
+  pool: 5
+
+development:
+  <<: *default
+  database: rails_blog_app
+
+test:
+  <<: *default
+  database: rails_blog_app
+
+production:
+  <<: *default
+  database: blog_app_prod
+  username: blog_app
+  password: <%= ENV["BLOG_APP_PROD_DB_PASSWORD"] %>
