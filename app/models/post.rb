@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   after_save :update_posts_counter
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 250 }
 
   def self.last_five_comments(id)
     post = Post.find_by(id:)
