@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'user_id'
   has_many :likes, foreign_key: 'user_id'
 
+  validates :name, presence: true
+
   def self.last_three_posts(id)
     user = User.find_by(id:)
     user.posts.order(created_at: :desc).limit(3)
