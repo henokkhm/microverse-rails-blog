@@ -5,6 +5,8 @@ class Post < ApplicationRecord
 
   after_save :update_posts_counter
 
+  validates :title, presence: true
+
   def self.last_five_comments(id)
     post = Post.find_by(id:)
     post.comments.order(created_at: :desc).limit(5)
