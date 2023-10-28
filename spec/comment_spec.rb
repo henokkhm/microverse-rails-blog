@@ -19,8 +19,8 @@ RSpec.describe Comment, type: :model do
   # Unit tests for .update_comments_counter
   it '.update_comments_counter should increment comments_counter after a new comment is added' do
     expect(@post1.comments_counter).to eq(0)
-    @comment1 = create_comment(@post1, @user, 'Comment 1', 9.days.ago)
-    @comment2 = create_comment(@post1, @user, 'Comment 2', 8.days.ago)
+    @comment1 = create_comment(@post1, @user, 'Comment 1', 3.days.ago)
+    @comment2 = create_comment(@post1, @user, 'Comment 2', 2.days.ago)
     expect(@post1.comments_counter).to eq(2)
   end
   ######
