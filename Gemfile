@@ -64,6 +64,9 @@ group :development do
   # gem "spring"
 
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
+
+  # Write unit/integration tests using rspec-rails
+  gem 'rspec-rails'
 end
 
 group :test do

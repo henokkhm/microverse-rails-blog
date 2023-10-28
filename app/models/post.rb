@@ -5,6 +5,10 @@ class Post < ApplicationRecord
 
   after_save :update_posts_counter
 
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   def self.last_five_comments(id)
     post = Post.find_by(id:)
     post.comments.order(created_at: :desc).limit(5)
@@ -13,6 +17,6 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    user.update(posts_counter: user.posts.count)
+    author.update(posts_counter: author.posts.count)
   end
 end
