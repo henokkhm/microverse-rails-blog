@@ -55,6 +55,7 @@ RSpec.describe User, type: :model do
 
     it 'return only the three most recent posts' do
       expect(@last_three_posts.count).to eq(3)
+      expect(@last_three_posts).to_not include(@post1)
       expect(@last_three_posts).to include(@post2)
       expect(@last_three_posts).to include(@post3)
       expect(@last_three_posts).to include(@post4)
