@@ -1,0 +1,7 @@
+<div class="post-preview-card">
+  <h2 class="post-preview-card__title"><%= post.title %></h2>
+  <p class="post-preview-card__body"><%= post.text[0, 100] %>...</p>
+  <p class="post-preview-card__stats">
+    Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+  </p>
+</div>

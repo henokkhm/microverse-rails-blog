@@ -1,1 +1,21 @@
-<h1>Details Page for a Specific User</h1>
+<section>
+  <%= render "components/user-card", user: @user  %>
+  <div class="bio-wrapper">
+    <p><%= @user.bio %></p>
+  </div>
+  <%if @user.posts.any? %>
+    <ul class="posts-wrapper">
+      <% @user.posts[0, 3].each do |post| %>
+        <li>
+          <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+            <%= render "components/post-preview-card", post: post %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+    <a class='btn' href="/users/<%= @user.id %>/posts">See all posts</a>
+  <% else %>
+    <h2> This user has no posts </h2>
+  <% end %>
+
+</section>
