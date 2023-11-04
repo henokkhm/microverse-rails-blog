@@ -1,0 +1,7 @@
+<%= form_for([@user, @post, @comment], url: user_post_comments_path(@user, @post)) do |form| %>
+  <div>
+    <%= form.label :new_comment%>
+    <%= form.text_area :text, cols: 30, rows:1%><br>
+  </div>
+    <%= form.submit "Save Comment", class:"btn" %>
+<% end %>

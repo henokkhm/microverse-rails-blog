@@ -1,6 +1,11 @@
 <section>
   <div class="post-card">
     <%= render "components/post-card", post: @post %>
+    
+    <%= form_with model: @like, url:user_post_likes_path(post_id: @post.id) do |form| %>
+      <%= form.submit  '♡', class:'like-btn'%>
+    <% end %>
+
     <%if @post.comments.any? %>
       <h4>Comments</h4>
       <ul class="comments-wrapper">
@@ -13,5 +18,6 @@
     <% else %>
       <h5> This post has no comments </h5>
     <% end %>
+    <%= render "components/comment-form", user: @user  %>
   </div>
 </section>

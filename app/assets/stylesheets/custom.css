@@ -31,28 +31,36 @@ p {
   margin-bottom: 0;
 }
 
+input,
+textarea {
+  margin-bottom: 0;
+}
+
 /* General styles */
 .btn {
-  display: block;
-  width: max-content;
-  padding: 1rem 1.7rem;
-  margin: 2rem 0;
-  background-color: rgb(0, 137, 175);
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 0.75rem;
-  transition: all 250ms ease-in;
+  display: block !important;
+  width: max-content !important;
+  padding: 1rem 1.7rem !important;
+  margin: 2rem 0 !important;
+  background-color: rgb(0, 137, 175) !important;
+  color: white !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border-radius: 0.75rem !important;
+  transition: all 250ms ease-in !important;
+  text-transform: unset !important;
+  line-height: unset !important;
+  border: none !important;
 }
 
 .btn:hover {
-  background-color: rgb(14, 146, 183);
-  color: white;
+  background-color: rgb(14, 146, 183) !important;
+  color: white !important;
 }
 
 .btn:active {
-  transform: translateY(3px);
+  transform: translateY(3px) !important;
 }
 
 /* ------------- */
@@ -216,6 +224,93 @@ p {
 
 .comment-card__body {
   padding: 1rem;
+}
+
+/* ------------- */
+
+/* Form styles */
+.comment-form {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+/* ------------- */
+
+/* Flash message styles */
+.flash {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: max-content;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  animation: fadeOut 3s;
+}
+
+.flash-success {
+  background-color: #4caf50;
+}
+
+.flash-error {
+  background-color: #f53939;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ------------- */
+
+/* New Post Form Styles */
+.h2-header {
+  color: #111;
+  padding: 5rem 0 1rem 0;
+  border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.new-post-form-wrapper {
+  padding: 1.5rem;
+  min-width: 300px;
+  max-width: 800px;
+  background: white;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+}
+
+/* ------------- */
+
+/* Like button styles */
+.like-btn {
+  all: unset !important;
+  color: red !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  background-color: #f6a5a5 !important;
+  width: 32px !important;
+  height: 32px !important;
+  text-align: center !important;
+  padding: 0.35rem 0.35rem 0.55rem 0.35rem !important;
+  border-radius: 50% !important;
+  transition: all 200ms ease-in-out !important;
+}
+
+.like-btn:hover {
+  transform: scale(1.1) !important;
+}
+
+.like-btn:active {
+  transform: translateY(2px) !important;
 }
 
 /* ------------- */

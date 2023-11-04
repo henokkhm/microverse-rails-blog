@@ -6,15 +6,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom" %>
   </head>
 
   <body>
     <%= yield %>
+    
+    <% if flash[:success].present? %>
+      <div class="flash flash-success">
+        <%= flash[:success] %>
+      </div>
+    <% elsif flash[:error].present? %>
+      <div class="flash flash-error">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
   </body>
 </html>

@@ -1,0 +1,13 @@
+<%= form_for([@user, @post], url: user_posts_path(@user, @post)) do |form| %>
+  <div>
+    <%= form.label :title%>
+    <%= form.text_field  :title%>
+  </div>
+
+  <div>
+    <%= form.label :body%>
+    <%= form.text_area :text, cols:40, row:1%>
+  </div>
+
+  <%=form.submit 'Save Post', class:'btn'%>
+<% end%>
