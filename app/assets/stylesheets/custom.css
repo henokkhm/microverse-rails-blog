@@ -271,3 +271,21 @@ textarea {
 }
 
 /* ------------- */
+
+/* New Post Form Styles */
+.h2-header {
+  color: #111;
+  padding: 5rem 0 1rem 0;
+  border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.new-post-form-wrapper {
+  padding: 1.5rem;
+  min-width: 300px;
+  max-width: 800px;
+  background: white;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+}
+
+/* ------------- */

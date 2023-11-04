@@ -3,6 +3,13 @@
   <div class="bio-wrapper">
     <p><%= @user.bio %></p>
   </div>
+
+  <h2 class="h2-header">Create a New Post</h2>
+  <div class="new-post-form-wrapper">
+    <%= render "components/post-form", user: @user  %>
+  </div>
+  
+  <h2 class="h2-header">Your Previouse Posts</h2>
   <%if @user.posts.any? %>
     <ul class="posts-wrapper">
       <% User.last_three_posts(@user.id).each do |post| %>
