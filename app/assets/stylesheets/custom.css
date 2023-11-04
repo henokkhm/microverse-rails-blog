@@ -152,6 +152,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 2rem 0;
 }
 
 .post-preview-card {
@@ -173,6 +174,41 @@ p {
 .post-preview-card__stats {
   text-align: right;
   margin-top: 1rem;
+}
+
+/* ------------- */
+
+/* Comment card styles */
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 2rem;
+  padding: 0.5rem;
+  min-width: 268px;
+  max-width: 868px;
+  background: rgb(240, 248, 248);
+  border-radius: 1rem;
+}
+
+.comment-card__header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.comment-card__photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.comment-card__username {
+  font-weight: 600;
+}
+
+.comment-card__body {
+  padding: 1rem;
 }
 
 /* ------------- */

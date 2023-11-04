@@ -6,7 +6,7 @@
   <%if @user.posts.any? %>
     <ul class="posts-wrapper">
       <% @user.posts[0, 3].each do |post| %>
-        <li>
+        <li class="post-preview-card">
           <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
             <%= render "components/post-preview-card", post: post %>
           </a>
