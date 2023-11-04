@@ -155,6 +155,7 @@ p {
   margin: 2rem 0;
 }
 
+.post-card,
 .post-preview-card {
   display: flex;
   flex-direction: column;
@@ -167,10 +168,16 @@ p {
   border: 2px solid transparent;
 }
 
+.post-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .post-preview-card:hover {
   border: 2px solid rgb(96, 154, 212);
 }
 
+.post-card__stats,
 .post-preview-card__stats {
   text-align: right;
   margin-top: 1rem;

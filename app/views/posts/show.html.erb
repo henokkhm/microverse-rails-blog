@@ -1,1 +1,17 @@
-<h1>Details Page for a Specific Post Made by a Specific User</h1>
+<section>
+  <div class="post-card">
+    <%= render "components/post-card", post: @post %>
+    <%if @post.comments.any? %>
+      <h4>Comments</h4>
+      <ul class="comments-wrapper">
+        <% @post.comments.each do |comment| %>
+          <li>
+            <%= render "components/comment-card", comment: comment %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h5> This post has no comments </h5>
+    <% end %>
+  </div>
+</section>
