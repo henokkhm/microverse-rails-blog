@@ -45,5 +45,23 @@ RSpec.describe 'post index view page', type: :system do
       expect(page).to have_content(comment1.text)
     end
     
-  end
+    it 'displays a post\'s title and text' do
+        expect(page).to have_content(post1.title)
+        expect(page).to have_content(post1.text)
+        expect(page).to have_content(post2.title)
+        expect(page).to have_content(post2.text)
+      end
+  
+      it 'displays the number of comments a post has' do
+        # Visit the user's posts page
+        visit user_posts_path(user1)
+  
+        expect(page).to have_content(post1.title)
+        expect(page).to have_content(post1.text)
+  
+        # Check the comments count in the updated format
+        expect(page).to have_content("#{post1.comments_counter} Comments")
+      end
+  
+    end
 end
