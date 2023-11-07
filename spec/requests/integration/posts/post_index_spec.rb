@@ -62,6 +62,31 @@ RSpec.describe 'post index view page', type: :system do
         # Check the comments count in the updated format
         expect(page).to have_content("#{post1.comments_counter} Comments")
       end
+      
+      it 'displays the number of likes a post has' do
+        # Visit the user's posts page
+        visit user_posts_path(user1)
+  
+        # Check for the post's title and content
+        expect(page).to have_content(post1.title)
+        expect(page).to have_content(post1.text)
+  
+        expect(page).to have_content("#{post1.likes_counter} Likes")
+      end
+  
+      it 'redirects to the post show page when a post is clicked' do
+        click_link post1.title
+        expect(page).to have_current_path(user_post_path(user1, post1))
+        expect(page).to have_content(post1.title)
+      end
+  
+      it 'displays a section for pagination if there are more posts' do
+        # Set the user's posts_counter to a value that exceeds the page limit
+        user1.update(posts_counter: 10)
+  
+        visit user_path(user1)
+        expect(page).to have_selector('.button-container')
+      end
   
     end
 end
