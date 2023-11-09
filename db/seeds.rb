@@ -28,10 +28,15 @@ alice_post_3 = Post.create(author: alice, title: 'Alice\'s third post', text: 'A
 linda_post_1 = Post.create(author: linda, title: 'Linda\'s first post', text: 'Linda\'s first post', likes_counter: 0)
 linda_post_2 = Post.create(author: linda, title: 'Linda\'s second post', text: 'Linda\'s second post', likes_counter: 0)
 
-oscar_post_1 = Post.create(author: oscar, title: 'Oscar\'s first post', text: 'Oscar\'s first post', likes_counter: 0)
-oscar_post_2 = Post.create(author: oscar, title: 'Oscar\'s second post', text: 'Oscar\'s second post', likes_counter: 0)
-oscar_post_3 = Post.create(author: oscar, title: 'Oscar\'s third post', text: 'Oscar\'s third post', likes_counter: 0)
-oscar_post_4 = Post.create(author: oscar, title: 'Oscar\'s fourth post', text: 'Oscar\'s fourth post', likes_counter: 0)
+oscar_post_1 = Post.create(author: oscar, title: 'Oscar\'s first post', text: 'Oscar\'s first post', likes_counter: 0, created_at: 10.days.ago)
+oscar_post_2 = Post.create(author: oscar, title: 'Oscar\'s second post', text: 'Oscar\'s second post', likes_counter: 0, created_at: 9.days.ago)
+oscar_post_3 = Post.create(author: oscar, title: 'Oscar\'s third post', text: 'Oscar\'s third post', likes_counter: 0, created_at: 8.days.ago)
+oscar_post_4 = Post.create(author: oscar, title: 'Oscar\'s fourth post', text: 'Oscar\'s fourth post', likes_counter: 0, created_at: 7.days.ago)
+oscar_post_5 = Post.create(author: oscar, title: 'Oscar\'s fifth post', text: 'Oscar\'s fifth post', likes_counter: 0, created_at: 6.days.ago)
+oscar_post_6 = Post.create(author: oscar, title: 'Oscar\'s sixth post', text: 'Oscar\'s sixth post', likes_counter: 0, created_at: 5.days.ago)
+oscar_post_7 = Post.create(author: oscar, title: 'Oscar\'s seventh post', text: 'Oscar\'s seventh post', likes_counter: 0, created_at: 4.days.ago)
+oscar_post_8 = Post.create(author: oscar, title: 'Oscar\'s eighth post', text: 'Oscar\'s eighth post', likes_counter: 0, created_at: 3.days.ago)
+oscar_post_9 = Post.create(author: oscar, title: 'Oscar\'s ninth post', text: 'Oscar\'s ninth post', likes_counter: 0, created_at: 2.days.ago)
 
 # comments
 tom_comment_1 = Comment.create(post: alice_post_2, user: tom, text: 'Tom\'s first comment', created_at: 10.days.ago)
