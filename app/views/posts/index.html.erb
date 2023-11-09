@@ -1,8 +1,8 @@
 <section>
   <%= render "components/user-card", user: @user  %>
-  <%if @user.posts.any? %>
+  <%if @posts.any? %>
     <ul class="posts-wrapper">
-      <% @user.posts.each do |post| %>
+      <% @posts.each do |post| %>
         <li class="post-preview-card">
           <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
             <%= render "components/post-preview-card", post: post %>
@@ -27,5 +27,9 @@
   <% else %>
     <h5> This user has no posts </h5>
   <% end %>
+
+  <div class="pagination">
+    <%= will_paginate @posts %>
+  </div>
 
 </section>
