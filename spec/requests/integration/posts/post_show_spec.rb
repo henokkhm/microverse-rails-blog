@@ -1,60 +1,43 @@
 require 'rails_helper'
 
-RSpec.describe 'post show view page', type: :system do
-  let!(:user1) do
-    User.create(
-      name: 'test user1',
-      photo: 'https://images3.alphacoders.com/690/690494.jpg',
-      bio: 'test_bio1',
-      posts_counter: 1
-    )
-  end
-
-  let!(:post1) do
-    Post.create(author: user1, title: 'Post 1', text: 'Post 1 content', comments_counter: 3, likes_counter: 1)
-  end
-
-  let!(:comment1) do
-    Comment.create(post: post1, user: user1, text: 'good!')
-  end
-  let!(:comment2) do
-    Comment.create(post: post1, user: user1, text: 'good!')
-  end
-  let!(:comment3) do
-    Comment.create(post: post1, user: user1, text: 'good!')
-  end
-
-  describe 'show correct post for user1' do
+# The following tests assume that the seeds of the database in /db/seeds.rb have been
+# added to the database. This can be done by running the 'bin/rails db:reset' command
+RSpec.describe 'Post show page', type: :system do
+  describe "When user visits Oscar's first post show page" do
     before(:example) do
-      visit user_post_path(user1, post1)
+      oscar = User.find(4) # Oscar has id of 4
+      oscars_first_post = Post.where(title: "Oscar's first post").first
+      visit user_post_path(oscar, oscars_first_post)
     end
 
-    it 'displays the post title' do
-      expect(page).to have_content(post1.title)
+    it "displays the post's title" do
+      expect(page).to have_content("Oscar's first post")
     end
 
-    it 'displays the number of likes' do
-      expect(page).to have_content("#{post1.likes_counter} Likes")
+    it 'displays who wrote the post' do
+      expect(page).to have_content('Oscar')
     end
 
-    it 'displays the number of comments' do
-      expect(page).to have_content("#{post1.comments_counter} Comments")
+    it 'displays how many comments the post has' do
+      expect(page).to have_content('Comments: 2')
     end
 
-    it 'displays the username of each commenter' do
-      expect(page).to have_content(comment1.user.name)
-      expect(page).to have_content(comment2.user.name)
-      expect(page).to have_content(comment3.user.name)
+    it 'displays how many likes the post has' do
+      expect(page).to have_content('Likes: 3')
     end
 
     it 'displays the post body' do
-      expect(page).to have_content(post1.text)
+      expect(page).to have_content("Oscar's first post")
     end
 
-    it 'displays the comment left by each commenter' do
-      expect(page).to have_content(comment1.text)
-      expect(page).to have_content(comment2.text)
-      expect(page).to have_content(comment3.text)
+    it 'displays the username of each commentor' do
+      expect(page).to have_content('Alice')
+      expect(page).to have_content('Tom')
+    end
+
+    it 'displays the comment each commentor left' do
+      expect(page).to have_content("Alice's first comment")
+      expect(page).to have_content("Tom's second comment")
     end
   end
 end
