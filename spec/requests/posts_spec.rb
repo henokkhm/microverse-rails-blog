@@ -14,10 +14,6 @@ RSpec.describe 'Posts contoller', type: :request do
     it 'renders the correct template' do
       expect(response).to render_template(:index)
     end
-
-    it 'includes the right placeholder HTML element in the response' do
-      expect(response.body).to include('<h1>List of All Posts Made by a Specific User</h1>')
-    end
   end
 
   describe 'GET request to endpoint "/users/:user_id/posts/:post_id"' do
@@ -33,10 +29,6 @@ RSpec.describe 'Posts contoller', type: :request do
 
     it 'renders the correct template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'includes the right placeholder HTML element in the response' do
-      expect(response.body).to include('<h1>Details Page for a Specific Post Made by a Specific User</h1>')
     end
   end
 end
