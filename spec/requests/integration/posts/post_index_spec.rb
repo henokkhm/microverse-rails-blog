@@ -43,6 +43,12 @@ RSpec.describe 'Post index page', type: :system do
       expect(page).to have_content('Likes: 3')
     end
 
+    it 'Displays pagination if there are more posts' do
+      oscar = User.find(4)
+      visit user_posts_path(oscar)
+      expect(page).to have_css('.pagination')
+    end
+
     it "redirects to the post's show page when user clicks on Oscar's latest post's card" do
       oscar = User.find(4) # Oscar has id of 4
       oscars_ninth_post = Post.where(title: "Oscar's ninth post").first
