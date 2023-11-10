@@ -360,4 +360,10 @@ form {
   justify-content: center;
 }
 
+.remember-me {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
 /* ------------- */
