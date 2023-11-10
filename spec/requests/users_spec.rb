@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users controller', type: :request do
   describe 'GET request to endpoint "/users"' do
-    before :each do
+    before(:each) do
       get users_path
     end
 
@@ -16,8 +16,8 @@ RSpec.describe 'Users controller', type: :request do
   end
 
   describe 'GET request to endpoint "/users/:id"' do
-    before :each do
-      @user = User.create(name: 'Henok', posts_counter: 0)
+    before(:each) do
+      @user = User.create(name: 'Henok', email: 'henok@example.com', password: 'passwordhenok')
       get user_path(@user)
     end
 
