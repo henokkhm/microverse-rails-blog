@@ -9,10 +9,10 @@
 #   end
 
 # users
-tom = User.create(name: 'Tom', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1368215673/video/4k-video-footage-of-a-handsome-young-businessman-standing-alone-in-his-office-during-the-day.jpg?s=640x640&k=20&c=gBEUf0TiVeJZFYpaNAASY_Dfqc_DlYDrYNqkok0V1LQ=', bio: 'Tom is a high school teacher.')
-alice = User.create(name: 'Alice', posts_counter: 0, photo: 'https://media.istockphoto.com/id/534137767/photo/black-woman-with-curly-hair-looking-up.jpg?s=612x612&w=0&k=20&c=zl80h9U2K8lh5VQRo7tvWRB9xnZfPNDzTGooyBR03-Q=', bio: 'Alice is a doctor.')
-linda = User.create(name: 'Linda', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1386217759/photo/portrait-of-a-confident-young-businesswoman-standing-against-an-urban-background.webp?b=1&s=170667a&w=0&k=20&c=oikPwsT7yx_9XIsNQYte82Fiqg7rBE1tHrlBXWye5jc=', bio: 'Linda is an athlete.')
-oscar = User.create(name: 'Oscar', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1008372366/photo/make-each-day-a-success.jpg?s=612x612&w=0&k=20&c=CdKT--2yyFGsmcEj05Tial8wYmQNZs_b3n4b0qJzowA=', bio: 'Oscar is an actor.')
+tom = User.create(name: 'Tom', email: 'tom@example.com', password: 'passwordtom', password_confirmation: 'passwordtom', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1368215673/video/4k-video-footage-of-a-handsome-young-businessman-standing-alone-in-his-office-during-the-day.jpg?s=640x640&k=20&c=gBEUf0TiVeJZFYpaNAASY_Dfqc_DlYDrYNqkok0V1LQ=', bio: 'Tom is a high school teacher.')
+alice = User.create(name: 'Alice', email: 'alice@example.com', password: 'passwordalice', password_confirmation: 'passwordalice', posts_counter: 0, photo: 'https://media.istockphoto.com/id/534137767/photo/black-woman-with-curly-hair-looking-up.jpg?s=612x612&w=0&k=20&c=zl80h9U2K8lh5VQRo7tvWRB9xnZfPNDzTGooyBR03-Q=', bio: 'Alice is a doctor.')
+linda = User.create(name: 'Linda', email: 'linda@example.com', password: 'passwordlinda', password_confirmation: 'passwordlinda', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1386217759/photo/portrait-of-a-confident-young-businesswoman-standing-against-an-urban-background.webp?b=1&s=170667a&w=0&k=20&c=oikPwsT7yx_9XIsNQYte82Fiqg7rBE1tHrlBXWye5jc=', bio: 'Linda is an athlete.')
+oscar = User.create(name: 'Oscar', email: 'oscar@example.com', password: 'passwordoscar', password_confirmation: 'passwordoscar', posts_counter: 0, photo: 'https://media.istockphoto.com/id/1008372366/photo/make-each-day-a-success.jpg?s=612x612&w=0&k=20&c=CdKT--2yyFGsmcEj05Tial8wYmQNZs_b3n4b0qJzowA=', bio: 'Oscar is an actor.')
 
 # posts
 tom_post_1 = Post.create(author: tom, title: 'Tom\'s first post', text: 'Tom\'s first post', likes_counter: 0)
