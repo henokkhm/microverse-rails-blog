@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Posts contoller', type: :request do
   describe 'GET request to endpoint "/users/:user_id/posts"' do
-    before :each do
-      @user = User.create(name: 'Henok', posts_counter: 0)
+    before(:each) do
+      @user = User.create(name: 'Henok', email: 'henok@example.com', password: 'passwordhenok')
       get user_posts_path(@user)
     end
 
@@ -17,8 +17,8 @@ RSpec.describe 'Posts contoller', type: :request do
   end
 
   describe 'GET request to endpoint "/users/:user_id/posts/:post_id"' do
-    before :each do
-      @user = User.create(name: 'Henok', posts_counter: 0)
+    before(:each) do
+      @user = User.create(name: 'Henok', email: 'henok@example.com', password: 'passwordhenok')
       @post = @user.posts.create(title: 'Post 1')
       get user_post_path(@user, @post)
     end
